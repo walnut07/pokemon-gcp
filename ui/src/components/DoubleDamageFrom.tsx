@@ -10,7 +10,7 @@ function DoubleDamageFrom({doubleDamageTo}: {doubleDamageTo: DoubleDamageFromArr
 
     return (
         <div className="flex flex-wrap justify-center space-x-2">
-            <span>is week to</span>
+            <span>is weak to</span>
             {doubleDamageTo.map((type) => {
                 return <Chip value={type['name']}></Chip>
             })}
