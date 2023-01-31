@@ -1,3 +1,4 @@
+import { DoubleDamageFromArray } from '../interface/interface';
 import axios from 'axios';
 
 class PokeTypeApi {
@@ -9,10 +10,10 @@ class PokeTypeApi {
         this.pokeName = pokeName;
     }
     
-    async getDoubleDamageTo(): Promise<Array<string>> {
+    async getDoubleDamageFrom(): Promise<DoubleDamageFromArray> {
         const urlToType = await this.getUrlToType();
         const data = await axios.get(urlToType).then(res => res.data);
-        return data['damage_relations']['double_damage_to'];
+        return data['damage_relations']['double_damage_from'];
     }
 
     private async getUrlToType(): Promise<string> {

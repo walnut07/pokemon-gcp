@@ -1,7 +1,8 @@
 import { Chip } from "@material-tailwind/react";
+import { DoubleDamageFromArray } from "../interface/interface";
 import { useEffect } from "react";
 
-function DoubleDamageTo({doubleDamageTo}: {doubleDamageTo: Array<Object>}) {
+function DoubleDamageFrom({doubleDamageTo}: {doubleDamageTo: DoubleDamageFromArray}) {
     useEffect(() => {
 
         console.log(doubleDamageTo);
@@ -10,10 +11,10 @@ function DoubleDamageTo({doubleDamageTo}: {doubleDamageTo: Array<Object>}) {
     return (
         <div className="flex flex-wrap justify-center space-x-2">
             {doubleDamageTo.map((type) => {
-                return <Chip value={type['type']}></Chip>
+                return <Chip value={type['name']}></Chip>
             })}
         </div>
     )
 }
 
-export default DoubleDamageTo;
+export default DoubleDamageFrom;

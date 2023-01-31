@@ -1,16 +1,17 @@
 import './App.css';
 
-import DoubleDamageTo from './components/DoubleDamageTo';
+import DoubleDamageFrom from './components/DoubleDamageFrom';
+import { DoubleDamageFromArray } from './interface/interface';
 import Input from './components/Input';
 import { useState } from 'react';
 
 function App() {
-  const [doubleDamageTo, setDoubleDamageTo] = useState<Array<Object>>([]);
+  const [doubleDamageFrom, setDoubleDamageFrom] = useState<DoubleDamageFromArray>([]);
 
   return (
     <div className="App">
-      <Input setDoubleDamageTo={setDoubleDamageTo}/>
-      <DoubleDamageTo doubleDamageTo={doubleDamageTo}></DoubleDamageTo>
+      <Input setDoubleDamageFrom={setDoubleDamageFrom}/>
+      <DoubleDamageFrom doubleDamageTo={doubleDamageFrom}></DoubleDamageFrom>
     </div>
   );
 }
