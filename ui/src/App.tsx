@@ -10,6 +10,7 @@ function App() {
 
   return (
     <div className="App">
+      <p>CI/CD testing</p>
       <Input setDoubleDamageFrom={setDoubleDamageFrom}/>
       <DoubleDamageFrom doubleDamageTo={doubleDamageFrom}></DoubleDamageFrom>
     </div>
