@@ -14,7 +14,7 @@ func SetRouter() *gin.Engine {
 	config.AllowOrigins = []string{"*"} //TODO(kurumi): Allow only appropriate groups
 	router.Use(cors.New(config))
 
-	router.GET("/test", test)
+	router.PUT("/comment", submitComment)
 	router.NoRoute(func(ctx *gin.Context) { ctx.JSON(http.StatusNotFound, gin.H{}) })
 
 	return router

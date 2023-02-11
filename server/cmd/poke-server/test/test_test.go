@@ -9,7 +9,8 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func testTest(t *testing.T) {
+func testComment(t *testing.T) {
+	// TODO(kurumi): Add unit tests for the endpoint /comment
 	w := httptest.NewRecorder()
 	req, _ := http.NewRequest("GET", "/test", nil)
 	router := server.SetRouter()
