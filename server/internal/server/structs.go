@@ -1,6 +1,6 @@
 package server
 
-type CommentReq struct {
+type PostCommentReq struct {
 	PokemonId int64
 	UnixTime  int64
 	Content   string

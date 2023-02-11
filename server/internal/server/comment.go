@@ -16,7 +16,7 @@ import (
 var DATABASE_URL = "https://pokemon-8bfaf-default-rtdb.firebaseio.com/"
 
 func submitComment(ginCtx *gin.Context) {
-	req := new(CommentReq)
+	req := new(PostCommentReq)
 	if err := ginCtx.Bind(req); err != nil {
 		ginCtx.AbortWithStatusJSON(http.StatusBadRequest, gin.H{"err": err.Error()})
 		return
@@ -29,6 +29,19 @@ func submitComment(ginCtx *gin.Context) {
 	}
 
 	ginCtx.JSON(http.StatusOK, "comment submitted")
+}
+
+func getComments(ginCtx *gin.Context) {
+	id := ginCtx.Query("id")
+
+	client := getDbClient()
+	var comments map[string]interface{}
+	ref := client.NewRef("comments/" + fmt.Sprint(id))
+	if err := ref.Get(context.TODO(), &comments); err != nil {
+		panic(fmt.Sprintf("Error reading data from firebase: %v", err))
+	}
+
+	ginCtx.JSON(http.StatusOK, comments)
 }
 
 func getDbClient() *db.Client {
