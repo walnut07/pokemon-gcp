@@ -3,12 +3,25 @@ import { Dispatch, SetStateAction } from "react";
 import { DoubleDamageFromArray } from "../interface/interface";
 import {PokeTypeApi} from "../API/api";
 
-function Input({ setDoubleDamageFrom: setDoubleDamageFrom } : {setDoubleDamageFrom: Dispatch<SetStateAction<DoubleDamageFromArray>>}) {
+interface Props {
+    setDoubleDamageFrom: Dispatch<SetStateAction<DoubleDamageFromArray>>;
+    setPokeId: Dispatch<SetStateAction<number | null>>;
+}
+
+const Input:  React.FC<Props> = ({setDoubleDamageFrom, setPokeId}) => {
     const displayDoubleDamageFrom = async (event: React.MouseEvent<HTMLButtonElement>) => {
         event.preventDefault();
         const input = document.getElementById('poke-name') as HTMLInputElement;
-        const doubleDamageTo = await new PokeTypeApi(input.value).getDoubleDamageFrom();
-        setDoubleDamageFrom(doubleDamageTo);
+        const pokeName = input.value;
+        const pokeTypeApi = new PokeTypeApi(pokeName)
+        try {
+            const doubleDamageTo = await pokeTypeApi.getDoubleDamageFrom();
+            const pokeId = await pokeTypeApi.getPokeId() as number;
+            setDoubleDamageFrom(doubleDamageTo);
+            setPokeId(pokeId)
+        } catch (e) {
+            console.error("error while getting Pokemon data")
+        }
     }
 
     return (
