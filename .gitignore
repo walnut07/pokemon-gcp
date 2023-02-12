@@ -1,2 +1,4 @@
 .DS_Store
 .vscode/settings.json
+server/internal/server/pokemon-8bfaf-firebase-adminsdk-d2a2q-11a5a392b1.json
+server/cmd/poke-server/.env
