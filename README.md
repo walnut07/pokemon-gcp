@@ -10,7 +10,7 @@
 - [ ] Users can edit or delete comments that they had made.
 
 ## Tech Stack
-Frontend: React, TypeScript, tailwind \
+Frontend: React, TypeScript, tailwind, Docker, Nginx, GCP \
 Backend: Go, gin, Firebase Realtime Database, (Docker, GCP *not used as of 2/12 2023)
 
 ## GCP Architecture
