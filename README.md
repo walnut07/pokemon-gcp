@@ -11,5 +11,12 @@
 
 ## Tech Stack
 Frontend: React, TypeScript, tailwind \
-Backend: Go, gin, Firebase, Docker, GCP
+Backend: Go, gin, Firebase Realtime Database, (Docker, GCP *not used as of 2/12 2023)
 
+## GCP Architecture
+### Client Side
+The client-side server is deployed to GCP. A code push to the source code triggers Cloud Build and it deploys the app to Cloud Run.
+![The architecture](https://user-images.githubusercontent.com/90857923/218310161-779661f9-d282-4534-9a93-6456c2d8c990.png)
+
+### Server Side
+TODO: Deploy server side with Docker
