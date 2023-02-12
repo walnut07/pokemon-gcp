@@ -2,8 +2,8 @@ import './App.css';
 
 import { Comment, DoubleDamageFromArray } from './interface/interface';
 
-import CommentForm from './components/CommentForm';
-import Comments from './components/Comments';
+import CommentForm from './components/comment/CommentForm';
+import Comments from './components/comment/Comments';
 import DoubleDamageFrom from './components/DoubleDamageFrom';
 import Input from './components/Input';
 import { useState } from 'react';

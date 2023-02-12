@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction, useEffect } from "react";
 
-import { Comment } from "../interface/interface";
-import { PokeServerApi } from "../API/pokeServer";
+import { Comment } from "../../interface/interface";
+import { WhichPokemonApi } from "../../API/whichPokemonApi";
 
 interface Props {
     pokeId: number | null;
@@ -12,7 +12,7 @@ interface Props {
 const Comments:  React.FC<Props> = ({pokeId, comments, setComments}) => {
     useEffect(() => {
         const fetchData = async () => {
-            return await new PokeServerApi().getComments(pokeId!);
+            return await new WhichPokemonApi().getComments(pokeId!);
         }
         fetchData().then(res => setComments(res))
     }, [pokeId])

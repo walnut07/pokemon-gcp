@@ -18,4 +18,4 @@ class WhichPokemonApi {
     }
 }
 
-export {WhichPokemonApi as PokeServerApi}
+export {WhichPokemonApi}
