@@ -1,7 +1,7 @@
-import { Comment, CommentReq } from "../interface/interface";
+import { Comment, CommentReq } from "../../interface/interface";
 import { Dispatch, SetStateAction } from "react";
 
-import { PokeServerApi } from "../API/pokeServer";
+import { WhichPokemonApi } from "../../API/whichPokemonApi";
 
 interface Props {
     pokeId: number | null;
@@ -9,7 +9,7 @@ interface Props {
 }
 
 const CommentForm:  React.FC<Props> = ({pokeId, setComments}) => {
-    const pokeServerApi = new PokeServerApi();
+    const pokeServerApi = new WhichPokemonApi();
 
     const submitComment = async (event: React.MouseEvent<HTMLButtonElement>) => {
         event.preventDefault();
