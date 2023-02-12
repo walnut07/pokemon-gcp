@@ -10,3 +10,10 @@ export interface CommentReq {
     unixTime: number;
     content: string;
 }
+
+export interface Comment {
+    [id: string]: {
+        Content: string;
+        UnixTime: number;
+    }
+}

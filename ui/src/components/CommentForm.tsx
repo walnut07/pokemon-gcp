@@ -1,19 +1,23 @@
-import { CommentReq } from "../interface/interface";
+import { Comment, CommentReq } from "../interface/interface";
+import { Dispatch, SetStateAction } from "react";
+
 import { PokeServerApi } from "../API/pokeServer";
 
 interface Props {
     pokeId: number | null;
+    setComments: Dispatch<SetStateAction<Comment | null>>;
 }
 
-const CommentForm:  React.FC<Props> = ({pokeId: pokemonId}) => {
+const CommentForm:  React.FC<Props> = ({pokeId, setComments}) => {
     const pokeServerApi = new PokeServerApi();
 
     const submitComment = async (event: React.MouseEvent<HTMLButtonElement>) => {
         event.preventDefault();
         const textarea = document.getElementById('comment') as HTMLInputElement;
-        const req: CommentReq = {pokemonId: pokemonId!, unixTime: new Date().getTime(), content: textarea.value}
+        const req: CommentReq = {pokemonId: pokeId!, unixTime: new Date().getTime(), content: textarea.value}
         try {
             await pokeServerApi.submitComment(req);
+            setComments(await pokeServerApi.getComments(pokeId!))
         } catch (e) {
             console.error("some error while posting the comment")
         }

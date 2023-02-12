@@ -1,20 +1,24 @@
 import './App.css';
 
+import { Comment, DoubleDamageFromArray } from './interface/interface';
+
 import CommentForm from './components/CommentForm';
+import Comments from './components/Comments';
 import DoubleDamageFrom from './components/DoubleDamageFrom';
-import { DoubleDamageFromArray } from './interface/interface';
 import Input from './components/Input';
 import { useState } from 'react';
 
 function App() {
   const [doubleDamageFrom, setDoubleDamageFrom] = useState<DoubleDamageFromArray>([]);
   const [pokeId, setPokemonId] = useState<number | null>(null);
-
+  const [comments, setComments] = useState<Comment | null>(null);
+  
   return (
     <div className="App">
       <Input setDoubleDamageFrom={setDoubleDamageFrom} setPokeId={setPokemonId}/>
-      <DoubleDamageFrom doubleDamageTo={doubleDamageFrom}></DoubleDamageFrom>
-      <CommentForm pokeId={pokeId} />
+      <DoubleDamageFrom doubleDamageTo={doubleDamageFrom} />
+      <CommentForm pokeId={pokeId} setComments={setComments} />
+      <Comments pokeId={pokeId} comments={comments} setComments={setComments} />
     </div>
   );
 }

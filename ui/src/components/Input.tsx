@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction } from "react";
 
 import { DoubleDamageFromArray } from "../interface/interface";
-import {PokeTypeApi} from "../API/api";
+import { PokeTypeApi } from "../API/api";
 
 interface Props {
     setDoubleDamageFrom: Dispatch<SetStateAction<DoubleDamageFromArray>>;
