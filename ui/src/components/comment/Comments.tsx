@@ -22,7 +22,8 @@ const Comments:  React.FC<Props> = ({pokeId, comments, setComments}) => {
             {comments &&
                 // TODO(kurumi): Sort comments by their unix time
                 Object.values(comments).map(comment => {
-                    return <h3>{comment.Content}</h3> 
+                    return <article className="flex w-1/3 m-auto p-2 my-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50">
+                        {comment.Content}</article> 
                 })
             }
         </>
