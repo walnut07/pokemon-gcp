@@ -17,7 +17,7 @@ function App() {
     <div className="App">
       <Input setDoubleDamageFrom={setDoubleDamageFrom} setPokeId={setPokemonId}/>
       <DoubleDamageFrom doubleDamageTo={doubleDamageFrom} />
-      <CommentForm pokeId={pokeId} setComments={setComments} />
+      <CommentForm pokeId={pokeId} setComments={setComments} isSearchDone={pokeId ? true : false}/>
       <Comments pokeId={pokeId} comments={comments} setComments={setComments} />
     </div>
   );
