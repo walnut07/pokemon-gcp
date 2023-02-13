@@ -1,6 +1,9 @@
 # Which Pokemon?
 ### This app tells you which types of pokemon you should use in a fight!
 
+## Demo
+TODO: Add a demo here
+
 ## Features
 - [x] The client-side server written with React is CI/CD to GCP.
 - [ ] The server-side server written with Go is CI/CD to GCP.
