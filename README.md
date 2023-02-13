@@ -2,7 +2,8 @@
 ### This app tells you which types of pokemon you should use in a fight!
 
 ## Demo
-TODO: Add a demo here
+https://user-images.githubusercontent.com/90857923/218408185-1ec42c32-39b7-41b8-b872-dded27ffa8ba.mov
+
 
 ## Features
 - [x] The client-side server written with React is CI/CD to GCP.
